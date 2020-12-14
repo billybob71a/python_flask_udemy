@@ -38,3 +38,26 @@ hello there
 hello there
 1234
 PS C:\Users\yungp_000> 
+
+    
+'''
+Another way to think of this is
+
+'''
+
+def decorator_function(original_function):
+    def wrapper_function():
+        if user["access_level"] == "admin":
+            return original_function()
+    return wrapper_function
+
+def get_admin_password():
+    return "1234"
+
+get_admin_password = decorator_function(get_admin_password)
+print(get_admin_password())
+
+this will yield
+1234
+    
+    
